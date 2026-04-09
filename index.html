@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>应用市场关闭通知</title>
   <style>
     body {
@@ -12,26 +13,41 @@
       padding: 0;
     }
     .container {
-      max-width: 600px;
-      margin: 80px auto;
+      max-width: 90%;
+      margin: 40px auto;
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
-      padding: 30px;
+      padding: 20px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     h1 {
       color: #d9534f;
+      font-size: 1.6em;
+      margin-bottom: 20px;
     }
     p {
       line-height: 1.6;
-      margin: 15px 0;
+      margin: 12px 0;
+      font-size: 1em;
     }
     .footer {
-      margin-top: 30px;
-      font-size: 14px;
+      margin-top: 20px;
+      font-size: 0.9em;
       color: #777;
+    }
+    @media (min-width: 768px) {
+      .container {
+        max-width: 600px;
+        padding: 30px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.1em;
+      }
     }
   </style>
 </head>
@@ -42,7 +58,7 @@
     <p>由于服务器到期，本应用市场已于近期关闭。感谢大家一直以来的支持与使用。</p>
     <p>本应用市场提供的所有应用均为 <strong>自制免费应用</strong>。因服务器维护成本原因，暂时无法继续提供服务。</p>
     <p>未来如有新的计划或重新上线，我们将第一时间告知。</p>
-    <div class="footer">—— 应用市场团队</div>
+    <div class="footer">—— 水喝千束、次放应用市场团队</div>
   </div>
 </body>
 </html>
