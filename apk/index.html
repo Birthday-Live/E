@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>次放应用商店</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .notice {
+      position: sticky;
+      top: 0;
+      background: #ff5722;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+      font-size: 14px;
+    }
+    .download-btn:hover {
+      background: #45a049;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+      .notice {
+        font-size: 12px;
+        padding: 8px;
+      }
+      .card {
+        padding: 15px;
+      }
+      .card img {
+        width: 80px;
+        height: 80px;
+      }
+      .download-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>次放应用商店</h1>
+    <p>纪念曾经的应用商店</p>
+    <div class="notice">
+      此应用商店已关停，此网页为纪念用，虽然可以下载软件，但是为过时版本！
+    </div>
+  </header>
+
+  <div class="container" id="apk-list">
+    <!-- JS 会动态插入卡片 -->
+  </div>
+
+  <footer>
+    © 2026 我的APK纪念页面
+  </footer>
+
+  <script>
+    // 读取 JSON 文件并生成展示卡片
+    fetch('apk-sj.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('apk-list');
+        data.forEach(app => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <img src="${app.icon}" alt="${app.name}">
+            <h3>${app.name}</h3>
+            <p><strong>版本：</strong>${app.version}</p>
+            <p><strong>大小：</strong>${app.size}</p>
+            <p>${app.description}</p>
+            <a href="${app.file}" class="download-btn">下载APK</a>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        document.getElementById('apk-list').innerHTML = "<p>加载失败，请检查apk-sj.json文件 或 联系管理</p>";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
