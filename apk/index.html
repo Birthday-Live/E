@@ -115,7 +115,7 @@
 
   <script>
     // 读取 JSON 文件并生成展示卡片
-    fetch('apk/apk-sj.json')  // 指向 apk 目录下的 JSON 文件
+    fetch('apk-sj.json')  // 指向 apk 目录下的 JSON 文件
       .then(response => response.json())
       .then(data => {
         const container = document.getElementById('apk-list');
