@@ -110,12 +110,12 @@
   </div>
 
   <footer>
-    © 2026 我的APK纪念页面
+    © 2026 次放应用商店纪念页面
   </footer>
 
   <script>
     // 读取 JSON 文件并生成展示卡片
-    fetch('https://app.store.waterchisato.top/apk/apk-sj.json')
+    fetch('apk/apk-sj.json')  // 指向 apk 目录下的 JSON 文件
       .then(response => response.json())
       .then(data => {
         const container = document.getElementById('apk-list');
@@ -123,18 +123,18 @@
           const card = document.createElement('div');
           card.className = 'card';
           card.innerHTML = `
-            <img src="${app.icon}" alt="${app.name}">
+            <img src="apk/${app.icon}" alt="${app.name}">
             <h3>${app.name}</h3>
             <p><strong>版本：</strong>${app.version}</p>
             <p><strong>大小：</strong>${app.size}</p>
             <p>${app.description}</p>
-            <a href="${app.file}" class="download-btn">下载APK</a>
+            <a href="apk/${app.file}" class="download-btn">下载APK</a>
           `;
           container.appendChild(card);
         });
       })
       .catch(err => {
-        document.getElementById('apk-list').innerHTML = "<p>加载失败，请检查apk-sj.json文件 或 联系管理</p>";
+        document.getElementById('apk-list').innerHTML = "<p>加载失败，请检查 apk/apk-sj.json 文件。</p>";
         console.error(err);
       });
   </script>
