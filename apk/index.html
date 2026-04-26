@@ -128,13 +128,13 @@
             <p><strong>版本：</strong>${app.version}</p>
             <p><strong>大小：</strong>${app.size}</p>
             <p>${app.description}</p>
-            <a href="${app.file}" class="download-btn">下载APK</a>
+            <a href="${app.file}" class="download-btn">下载软件</a>
           `;
           container.appendChild(card);
         });
       })
       .catch(err => {
-        document.getElementById('apk-list').innerHTML = "<p>加载失败，请检查 apk/apk-sj.json 文件。</p>";
+        document.getElementById('apk-list').innerHTML = "<p>加载失败，请检查 配置 文件。</p>";
         console.error(err);
       });
   </script>
