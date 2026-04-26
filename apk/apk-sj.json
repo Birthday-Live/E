@@ -24,6 +24,22 @@
     "file": "https://t1.zxcmk.com/down/com.joym.xiongdakuaipao.uc_4.3.0_tdxz.net.apk"
   },
   {
+    "name": "AppCfaeyStore",
+    "version": "0.0.1",
+    "size": "14.29MB",
+    "description": "次放软件官方APP商店！",
+    "icon": "https://wg.vp.20110202.top/appstore.png",
+    "file": "https://wg.vp.20110202.top/appstore.apl"
+  },
+  {
+    "name": "次放音乐",
+    "version": "1.0.0",
+    "size": "11.67MB",
+    "description": "基于通知的音频播放器",
+    "icon": "https://wg.vp.20110202.top/cfmusic.png",
+    "file": "https://wg.vp.20110202.top/次放音乐1.0.apl"
+  },
+  {
     "name": "漂流瓶",
     "version": "0.0.0",
     "size": "2.5 MB",
